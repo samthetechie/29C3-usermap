@@ -78,8 +78,23 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			attribution: '29C3-usermap'
 		}).addTo(map);
 
+//tshirts
+		L.marker([-71.17358, -91.71387]).addTo(map)
+			.bindPopup("t-shirts").openPopup();
+
+//bar
+
+		L.marker([-74.54333, -107.22656]).addTo(map)
+			.bindPopup("Foo:bar").openPopup();
+
+//info
 		L.marker([-72.52813, -98.26172]).addTo(map)
-			.bindPopup("Foo:Bar").openPopup();
+			.bindPopup("Info").openPopup();
+
+//tickets
+		L.marker([-69.39578, -82.30957]).addTo(map)
+			.bindPopup("Tickets").openPopup();
+
 /*
 		L.circle([51.508, -0.11], 500, {
 			color: 'red',
@@ -87,8 +102,6 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			fillOpacity: 0.5
 		}).addTo(map).bindPopup("I am a circle.");
 */
-
-
 
 //Hall4
 		L.polygon([
@@ -125,7 +138,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			[-83.05816, -119.9707],
 			[-83.06877, -122.51953],
 			[-84.54136, -122.7832]
-		]).addTo(map).bindPopup("Hackcenter");
+		]).addTo(map).bindPopup("Hackcenter - <a href=\"https://events.ccc.de/congress/2012/wiki/Hackcenter\" target=\"_blank\">Hackcenter</a>");
 
 //Lounge
 		L.polygon([
@@ -137,7 +150,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			[-80.44493, -53.26172],
 			[-81.03862, -56.42578],
 			[-80.16371, -65.47852],
-		]).addTo(map).bindPopup("Lounge");
+		]).addTo(map).bindPopup("Lounge - <a href=\"https://events.ccc.de/congress/2012/wiki/Lounge\" target=\"_blank\">Lounge</a>");
 //Wardrobe
 		L.polygon([
 			[-66.54826, -111.09375],
@@ -146,7 +159,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			[-70.40735, -95.40527],
 			[-66.49574, -98.83301],
 			[-67.52537, -109.77539],
-		]).addTo(map).bindPopup("Wardrobe");
+		]).addTo(map).bindPopup("Wardrobe - <a href=\"https://events.ccc.de/congress/2012/wiki/Wardrobe\" target=\"_blank\">Wardrobe</a>");
 
 //Heaven
 		L.polygon([
@@ -154,7 +167,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			[-82.85338, 32.69531],
 			[-84.54136, 32.34375],
 			[-84.50782, 13.00781],
-		]).addTo(map).bindPopup("Heaven");
+		]).addTo(map).bindPopup("Heaven - <a href=\"https://events.ccc.de/congress/2012/wiki/Heaven\" target=\"_blank\">Heaven</a>");
 
 //Hall 1:0x02		
 L.polygon([
@@ -238,7 +251,7 @@ L.polygon([
 			polygon_coords = polygon_coords + "["+e.latlng.toString()+"],";
 			popup
 				.setLatLng(e.latlng)
-//				.setContent("You clicked the map at " + polygon_coords)
+				.setContent("You clicked the map at " + polygon_coords)
 				.openOn(map);
 		}
 
