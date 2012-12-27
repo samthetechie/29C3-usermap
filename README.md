@@ -44,3 +44,11 @@ You should have received a copy of the GNU Affero Public License
 along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 </pre>
 
+Deployment
+==========
+*git clone to a webserver- something like linux/debian + apache would be fine
+
+References
+==========
+http://leafletjs.com/reference.html#tilelayer
+

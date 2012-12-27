@@ -78,9 +78,8 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			attribution: '29C3-usermap'
 		}).addTo(map);
 
-
 		L.marker([51.5, -0.09]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+			.bindPopup("48 Gigabit Switch").openPopup();
 
 		L.circle([51.508, -0.11], 500, {
 			color: 'red',
@@ -88,12 +87,96 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			fillOpacity: 0.5
 		}).addTo(map).bindPopup("I am a circle.");
 
-		L.polygon([
-			[51.509, -0.08],
-			[51.503, -0.06],
-			[51.51, -0.047]
-		]).addTo(map).bindPopup("I am a polygon.");
+//hall 4
 
+		L.polygon([
+			[-75.53014, -165.62988],
+			[-72.738, -165.58594],
+			[-67.67608, -157.85156],
+			[-65.94647, -142.11914],
+			[-67.70945, -126.21094],
+			[-71.55274, -121.11328],
+			[-75.54111, -127.96875]
+		]).addTo(map).bindPopup("Hall 4");
+
+//hall 6
+		L.polygon([
+			[-82.84244, -98.70117],
+			[-81.46626, -81.91406],
+			[-83.03688, -74.35547],
+			[-83.91438, -73.56445],
+			[-84.50782, -75.14648],
+			[-84.49097, -95.00977],
+			[-83.82049, -98.78906]
+		]).addTo(map).bindPopup("Hall 6");
+
+//Hackcenter
+		L.polygon([
+			[-84.4994, -166.99219],
+			[-78.0983, -169.54102],
+			[-78.0983, -131.48437],
+			[-76.01609, -127.00195],
+			[-75.97355, -121.9043],
+			[-75.99484, -121.81641],
+			[-78.95456, -123.13477],
+			[-79.00496, -119.88281],
+			[-83.05816, -119.9707],
+			[-83.06877, -122.51953],
+			[-84.54136, -122.7832]
+		]).addTo(map).bindPopup("Hackcenter");
+
+//Lounge
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Lounge");
+//Wardrobe
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Wardrobe");
+
+//Heaven
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Heaven");
+
+//Hall 1:0x02
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Hall 1:0x02");
+
+//Hall 1:0x03
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Hall 1:0x03");
+
+//Hall 1:0x04
+		L.polygon([
+			[],
+			[],
+			[],
+			[],
+			[]
+		]).addTo(map).bindPopup("Hall 1:0x04");
 
 		var popup = L.popup();
 
