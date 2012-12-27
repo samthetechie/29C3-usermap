@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #
 # panslicer slices huge images in tiles suitable for use with leaflet
 # and possibly other software
@@ -31,7 +32,7 @@ size = img.size
 tile_size = 256
 
 # Use width
-idx = 0
+idx = 1
 
 # Image width should be tile_size times a power of two
 scale = (tile_size * (2 ** (math.ceil(math.log(float(size[idx])/tile_size,2)))))/size[idx]
