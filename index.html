@@ -77,7 +77,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			continuousWorld: true,
 			attribution: '29C3-usermap'
 		}).addTo(map);
-
+        
 //tshirts
 		L.marker([-71.17358, -91.71387]).addTo(map)
 			.bindPopup("t-shirts").openPopup();
@@ -101,6 +101,14 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 			fillOpacity: 0.5
 		}).addTo(map).bindPopup("I am a circle.");
 */
+
+//current location if set in url
+        if(window.location.hash.indexOf("loc") !== -1) {
+            hash = window.location.hash.split('/');
+            L.marker([hash[2], hash[3]]).addTo(map)
+                .bindPopup("linked location").openPopup();
+            map.setView([hash[2], hash[3]], 7);
+        }
 
 //Hall4
 		L.polygon([
@@ -250,9 +258,12 @@ L.polygon([
 
 		function onMapClick(e) {
 			polygon_coords = polygon_coords + "["+e.latlng.toString()+"],";
+            location_link = window.location.href.replace(window.location.hash,"") + "#/loc/";
+            location_link += e.latlng.lat + '/' + e.latlng.lng;
 			popup
 				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + polygon_coords)
+				.setContent("You clicked the map at " + polygon_coords + 
+                    '<br /><a href="' + location_link + '">Link to location</a>')
 				.openOn(map);
 		}
 
