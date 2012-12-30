@@ -1,7 +1,7 @@
 <!--
 __author__ = "Samuel Carlisle"
 __copyright__ = "Copyright 2012"
-__credits__ = ["samthetechie,izrail,andy,nobody"]
+__credits__ = ["samthetechie,izrail,andy,nobody,denschub"]
 __license__ = "GPL Affero"
 __version__ = "3"
 __maintainer__ = "Samuel Carlisle"
@@ -103,12 +103,7 @@ along with 29C3-usermap.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 //current location if set in url
-        if(window.location.hash.indexOf("loc") !== -1) {
-            hash = window.location.hash.split('/');
-            L.marker([hash[2], hash[3]]).addTo(map)
-                .bindPopup("linked location").openPopup();
-            map.setView([hash[2], hash[3]], 7);
-        }
+        addHashLocationMarker();
 
 //Hall4
 		L.polygon([
@@ -268,6 +263,23 @@ L.polygon([
 		}
 
 		map.on('click', onMapClick);
+        
+        function addHashLocationMarker() {
+            if(window.location.hash.indexOf("loc") !== -1) {
+                hash = window.location.hash.split('/');
+                L.marker([hash[2], hash[3]]).addTo(map)
+                    .bindPopup("linked location").openPopup();
+                map.setView([hash[2], hash[3]], 7);
+            }
+        }
+        
+        // TODO this feels a bit dirty, but I have no better idea without
+        // reloading the whole page.
+        if ("onhashchange" in window) {
+            window.onhashchange = (function() {
+                addHashLocationMarker();
+            });
+        }
 
 	</script>
 </body>
